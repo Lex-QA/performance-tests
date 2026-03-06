@@ -18,7 +18,7 @@ open_deposit_account_payload = {
 }
 
 open_deposit_account_response = httpx.post("http://localhost:8003/api/v1/accounts/open-deposit-account",
-                                           json=open_deposit_account_payload, timeout=10)
+                                           json=open_deposit_account_payload)
 open_deposit_account_response_data = open_deposit_account_response.json()
 
 print("Open deposit account response:", open_deposit_account_response_data)
