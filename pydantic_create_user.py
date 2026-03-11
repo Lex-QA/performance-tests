@@ -5,6 +5,7 @@ class UserSchema(BaseModel):
     """
     Модель данных пользователя.
     """
+
     id: str
     email: EmailStr
     last_name: str = Field(alias="lastName")
