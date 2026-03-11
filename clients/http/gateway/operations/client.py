@@ -96,7 +96,7 @@ class MakeFeeOperationRequestDict(MakeOperationRequestDict):
     pass
 
 
-class MakeFeeOperationResponseDict:
+class MakeFeeOperationResponseDict(TypedDict):
     """
     Структура ответа для создания операции комиссии.
     """
