@@ -3,11 +3,12 @@ from typing import TypedDict
 from httpx import Response
 
 from clients.http.client import HTTPClient
+from clients.http.gateway.client import build_gateway_http_client
 
 
 class IssueVirtualCardRequestDict(TypedDict):
     """
-    Структура данных для выдачи новой виртуальной карты клиенту.
+    Структура данных для выпуска новой виртуальной карты клиенту.
     """
     userId: str
     accountId: str
@@ -15,7 +16,7 @@ class IssueVirtualCardRequestDict(TypedDict):
 
 class IssuePhysicalCardRequestDict(TypedDict):
     """
-    Структура данных для выдачи новой физической карты клиенту.
+    Структура данных для выпуска новой физической карты клиенту.
     """
     userId: str
     accountId: str
@@ -28,7 +29,7 @@ class CardsGatewayHTTPClient(HTTPClient):
 
     def issue_virtual_card_api(self, request: IssueVirtualCardRequestDict) -> Response:
         """
-        Выдать виртуальную карту клиенту.
+        Выпустить виртуальную карту клиенту.
 
         :param request: Словарь с данными пользователя.
         :return: Ответ от сервера (объект httpx.Response).
@@ -37,9 +38,18 @@ class CardsGatewayHTTPClient(HTTPClient):
 
     def issue_physical_card_api(self, request: IssuePhysicalCardRequestDict) -> Response:
         """
-        Выдать физическую карту клиенту.
+        Выпустить физическую карту клиенту.
 
         :param request: Словарь с данными пользователя.
         :return: Ответ от сервера (объект httpx.Response).
         """
         return self.post("/api/v1/cards/issue-physical-card", json=request)
+
+
+def build_cards_gateway_http_client() -> CardsGatewayHTTPClient:
+    """
+    Функция создаёт экземпляр CardsGatewayHTTPClient с уже настроенным HTTP-клиентом.
+
+    :return: Готовый к использованию CardsGatewayHTTPClient.
+    """
+    return CardsGatewayHTTPClient(client=build_gateway_http_client())
