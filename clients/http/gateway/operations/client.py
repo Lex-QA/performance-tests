@@ -81,7 +81,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
 
     def make_top_up_operation_api(self, request: MakeOperationRequestDict) -> Response:
         """
-       Создание операции пополнения.
+        Создание операции пополнения.
 
         :param request: Словарь с данными создания операции пополнения.
         :return: Ответ от сервера (объект httpx.Response).
@@ -90,7 +90,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
 
     def make_cashback_operation_api(self, request: MakeOperationRequestDict) -> Response:
         """
-         Создание операции кэшбэка.
+        Создание операции кэшбэка.
 
         :param request: Словарь с данными создания операции кэшбэка.
         :return: Ответ от сервера (объект httpx.Response).
@@ -108,7 +108,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
 
     def make_purchase_operation_api(self, request: MakePurchaseOperationRequestDict) -> Response:
         """
-       Создание операции покупки.
+        Создание операции покупки.
 
         :param request: Словарь с данными создания операции покупки.
         :return: Ответ от сервера (объект httpx.Response).
