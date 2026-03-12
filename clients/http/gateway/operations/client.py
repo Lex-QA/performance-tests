@@ -184,7 +184,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
         :param account_id: Идентификатор счета.
         :return: Словарь с операциями по счёту.
         """
-        query = GetOperationsQuerySchema(accountId=account_id)
+        query = GetOperationsQuerySchema(account_id=account_id)
         response = self.get_operations_api(query)
         return GetOperationsResponseSchema.model_validate_json(response.text)
 
@@ -195,7 +195,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
         :param account_id: Идентификатор счета.
         :return: Словарь с агрегированной информацией.
         """
-        query = GetOperationsSummaryQuerySchema(accountId=account_id)
+        query = GetOperationsSummaryQuerySchema(account_id=account_id)
         response = self.get_operations_summary_api(query)
         return OperationsSummaryResponseSchema.model_validate_json(response.text)
 
@@ -209,7 +209,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
         :param account_id: Идентификатор счета.
         :return: Словарь с результатом операции.
         """
-        request = MakeFeeOperationRequestSchema(cardId=card_id, accountId=account_id)
+        request = MakeFeeOperationRequestSchema(card_id=card_id, account_id=account_id)
         response = self.make_fee_operation_api(request)
         return MakeFeeOperationResponseSchema.model_validate_json(response.text)
 
@@ -223,7 +223,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
         :param account_id: Идентификатор счета.
         :return: Словарь с результатом операции.
         """
-        request = MakeTopUpOperationRequestSchema(cardId=card_id, accountId=account_id)
+        request = MakeTopUpOperationRequestSchema(card_id=card_id, account_id=account_id)
         response = self.make_top_up_operation_api(request)
         return MakeTopUpOperationResponseSchema.model_validate_json(response.text)
 
@@ -237,7 +237,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
         :param account_id: Идентификатор счета.
         :return: Словарь с результатом операции.
         """
-        request = MakeCashbackOperationRequestSchema(cardId=card_id, accountId=account_id)
+        request = MakeCashbackOperationRequestSchema(card_id=card_id, account_id=account_id)
         response = self.make_cashback_operation_api(request)
         return MakeCashbackOperationResponseSchema.model_validate_json(response.text)
 
@@ -251,7 +251,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
         :param account_id: Идентификатор счета.
         :return: Словарь с результатом операции.
         """
-        request = MakeTransferOperationRequestSchema(cardId=card_id, accountId=account_id)
+        request = MakeTransferOperationRequestSchema(card_id=card_id, account_id=account_id)
         response = self.make_transfer_operation_api(request)
         return MakeTransferOperationResponseSchema.model_validate_json(response.text)
 
@@ -267,7 +267,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
         :param category: Категория покупки.
         :return: Словарь с результатом операции.
         """
-        request = MakePurchaseOperationRequestSchema(cardId=card_id, accountId=account_id)
+        request = MakePurchaseOperationRequestSchema(card_id=card_id, account_id=account_id)
         response = self.make_purchase_operation_api(request)
         return MakePurchaseOperationResponseSchema.model_validate_json(response.text)
 
@@ -281,7 +281,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
         :param account_id: Идентификатор счета.
         :return: Словарь с результатом операции.
         """
-        request = MakeBillPaymentOperationRequestSchema(cardId=card_id, accountId=account_id)
+        request = MakeBillPaymentOperationRequestSchema(card_id=card_id, account_id=account_id)
         response = self.make_bill_payment_operation_api(request)
         return MakeBillPaymentOperationResponseSchema.model_validate_json(response.text)
 
@@ -295,7 +295,7 @@ class OperationsGatewayHTTPClient(HTTPClient):
         :param account_id: Идентификатор счета.
         :return: Словарь с результатом операции.
         """
-        request = MakeCashWithdrawalOperationRequestSchema(cardId=card_id, accountId=account_id)
+        request = MakeCashWithdrawalOperationRequestSchema(card_id=card_id, account_id=account_id)
         response = self.make_cash_withdrawal_operation_api(request)
         return MakeCashWithdrawalOperationResponseSchema.model_validate_json(response.text)
 
