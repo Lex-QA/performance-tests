@@ -26,7 +26,7 @@ create_user_request = CreateUserRequest(
 create_user_response: CreateUserResponse = users_gateway_service.CreateUser(create_user_request)
 print('Create user response:', create_user_response)
 
-# Формируем запрос на создание карты с рандомными данными
+# Формируем запрос на создание дебетового счета
 open_debit_card_account_request = OpenDebitCardAccountRequest(
     user_id=create_user_response.user.id
 )
