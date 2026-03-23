@@ -269,14 +269,12 @@ class OperationsGatewayHTTPClient(HTTPClient):
 
     def make_purchase_operation(self,
                                 card_id: str,
-                                account_id: str,
-                                category: str) -> MakePurchaseOperationResponseSchema:
+                                account_id: str) -> MakePurchaseOperationResponseSchema:
         """
         Создаёт операцию покупки.
 
         :param card_id: Идентификатор карты.
         :param account_id: Идентификатор счета.
-        :param category: Категория покупки.
         :return: Словарь с результатом операции.
         """
         request = MakePurchaseOperationRequestSchema(card_id=card_id, account_id=account_id)
