@@ -19,7 +19,7 @@ def init(environment: Environment, **kwargs):
 
 
 # TaskSet — сценарий пользователя. Каждый виртуальный пользователь выполняет эти задачи
-class ExistingUserMakePurchaseOperationTaskSet(GatewayHTTPTaskSet):
+class MakePurchaseOperationTaskSet(GatewayHTTPTaskSet):
     seed_user: SeedUserResult  # Типизированная ссылка на данные из сидинга
 
     def on_start(self) -> None:
@@ -56,5 +56,5 @@ class ExistingUserMakePurchaseOperationTaskSet(GatewayHTTPTaskSet):
 
 
 # Пользовательский класс, который будет запускать наш TaskSet
-class ExistingUserMakePurchaseOperationScenarioUser(LocustBaseUser):
-    tasks = [ExistingUserMakePurchaseOperationTaskSet]
+class MakePurchaseOperationScenarioUser(LocustBaseUser):
+    tasks = [MakePurchaseOperationTaskSet]
