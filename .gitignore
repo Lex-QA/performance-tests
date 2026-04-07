@@ -1,21 +1,16 @@
-# Virtual environments
-.venv*/
-venv*/
-env/
-ENV/
+# pycharm
+.idea
 
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+# python
+venv
+.venv
+__pycache__
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
+# locust
+dumps
+locust_*.csv
+locust_*.json
+report.html
 
-# OS files
-.DS_Store
-Thumbs.db
+# Mac OS
+.DS_Storevenv/
