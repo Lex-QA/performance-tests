@@ -13,4 +13,4 @@ locust_*.json
 report.html
 
 # Mac OS
-.DS_Storevenv/
+.DS_Store
